@@ -1,7 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@tag description="Overall Page template" pageEncoding="UTF-8"%>
-<%@attribute name="compra_css" fragment="true" %>
-<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@attribute name="compra_css" fragment="true"%>
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -10,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<jsp:invoke fragment="compra_css"/>
+<jsp:invoke fragment="compra_css" />
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -34,7 +35,7 @@
 
 					<li><a href="/admin/filmes">Filmes</a></li>
 					<li><a href="/admin/salas">Salas</a></li>
-
+					<li><a href="/filme/em-cartaz">Comprar</a></li>			
 
 					<sec:authorize access="!isAuthenticated()">
 						<li><a href="/login">Login</a></li>
@@ -58,7 +59,7 @@
 		</div>
 	</nav>
 
-	<jsp:doBody/>
+	<jsp:doBody />
 	<script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 </body>
