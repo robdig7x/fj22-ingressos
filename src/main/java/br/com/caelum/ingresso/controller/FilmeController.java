@@ -95,7 +95,7 @@ public class FilmeController {
 		Filme filme	= filmeDao.findOne(id);
 		List<Sessao> sessoes = sessaoDao.buscaSessoesDoFilme(filme);
 		
-		Optional<DetalhesDoFilme> detalheDoFilme = client.request(filme);
+		Optional<DetalhesDoFilme> detalheDoFilme = client.request(filme, DetalhesDoFilme.class);
 
 		modelAndView.addObject("sessoes", sessoes);
 		modelAndView.addObject("detalhes", detalheDoFilme.orElse(new DetalhesDoFilme()));
@@ -110,12 +110,6 @@ public class FilmeController {
         filmeDao.delete(id);
     }
 
-	public ImdbClient getClient() {
-		return client;
-	}
 
-	public void setClient(ImdbClient client) {
-		this.client = client;
-	}
 
 }
